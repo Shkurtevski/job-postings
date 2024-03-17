@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return response("Hello World");
-});
+Route::get('posts/{id}', function ($id) {
+    return response('Post' . $id);
+})->where('id', '[0-9]+');
